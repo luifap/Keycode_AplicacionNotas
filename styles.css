@@ -1,16 +1,40 @@
-<<<<<<< HEAD
+/* Definición de variables CSS para mantener la coherencia en los colores y estilos */
+
+:root {
+    --background-color: #f7f7f7;
+    --header-background: #333;
+    --button-background: #4CAF50;
+    --button-hover-background: #45a049;
+    --text-color: #fff;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --padding: 1em;
+    --font-size: 16px;
+}
+
+
+/* Estilos para el cuerpo del documento */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
 }
 
+
+/* Estilos para el encabezado */
+
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
+    background-color: var(--header-background);
+    color: var(--text-color);
+    padding: var(--padding);
     text-align: center;
 }
+
+
+/* Estilos para el contenido principal */
 
 main {
     display: flex;
@@ -19,114 +43,102 @@ main {
     padding: 2em;
 }
 
-.formulario {
-    background-color: #f7f7f7;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* Estilos para el formulario */
+
+.formulario,
+#note-form {
+    background-color: var(--background-color);
+    padding: var(--padding);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px var(--shadow-color);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease;
 }
 
-.lista-notas {
-    background-color: #f7f7f7;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* Estilos para el formulario en hover */
+
+.formulario:hover,
+#note-form:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-#lista-notas {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-#lista-notas li {
-    padding: 1em;
-    border-bottom: 1px solid #ccc;
-}
+/* Estilos para los campos de texto */
 
-#lista-notas li:last-child {
-    border-bottom: none;
-}
-
-#btn-crear-nota {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 2em;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#btn-crear-nota:hover {
-    background-color: #444;
-}
-=======
-/* 
-  Estilos para el cuerpo del documento.
-*/
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  /* 
-    Estilos para el formulario.
-  */
-  #note-form {
-    width: 50%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 
-    Estilos para el campo de texto.
-  */
-  #note-text {
+input[type="text"],
+textarea,
+#note-text {
     width: 100%;
-    height: 100px;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-  }
-  
-  /* 
-    Estilos para el botón.
-  */
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
+    font-size: var(--font-size);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+
+/* Estilos para el botón de crear nota */
+
+button[type="submit"],
+#btn-crear-nota {
+    background-color: var(--button-background);
+    color: var(--text-color);
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: var(--border-radius);
     cursor: pointer;
-  }
-  
-  /* 
-    Estilos para la lista de notas.
-  */
-  #note-list {
+    font-size: var(--font-size);
+    transition: background-color 0.3s ease;
+}
+
+
+/* Estilos para el botón de crear nota en hover */
+
+button[type="submit"]:hover,
+#btn-crear-nota:hover {
+    background-color: var(--button-hover-background);
+}
+
+
+/* Estilos para la lista de notas */
+
+#lista-notas,
+#note-list {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  /* 
-    Estilos para cada nota en la lista.
-  */
-  #note-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  /* 
-    Estilos para la última nota en la lista.
-  */
-  #note-list li:last-child {
+    width: 100%;
+    max-width: 600px;
+}
+
+
+/* Estilos para cada nota en la lista */
+
+#lista-notas li,
+#note-list li {
+    padding: 1em;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+
+/* Estilos para la última nota en la lista */
+
+#lista-notas li:last-child,
+#note-list li:last-child {
     border-bottom: none;
-  }
->>>>>>> b19ecc0b3bae3772aba76a786cc15ca0047aa6d7
+}
+
+
+/* Estilos para el hover sobre las notas */
+
+#lista-notas li:hover,
+#note-list li:hover {
+    background-color: #e8e8e8;
+}
